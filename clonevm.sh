@@ -46,7 +46,7 @@ check $? 0 2
 
 
 echo -n "checking if target $NAME doesn't exist..."
-virsh list | grep $NAME >> /dev/null 2>&1
+virsh list --all | grep $NAME >> /dev/null 2>&1
 check $? 1 3
 
 echo -e "${GREEN}preconditions met. next step will suspend $ORIG, make a clone named $NAME and reset the clone. the reset will require sudo privileges${NC}"
