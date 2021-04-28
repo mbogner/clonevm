@@ -41,7 +41,7 @@ function check {
 }
 
 echo -n "checking if source $ORIG exists..."
-virsh list | grep $ORIG >> /dev/null 2>&1
+virsh list --all | grep $ORIG >> /dev/null 2>&1
 check $? 0 2
 
 
